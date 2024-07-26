@@ -1,0 +1,23 @@
+
+
+<table>
+    <tr>
+        <th>Codigo de Asignatura</th>
+        <th>grupo</th>
+        <th>Matricularme</th>
+        <th>estado</th>
+        <th>editar</th>
+    </tr>
+    {% for lab in laboratorios %}
+    <tr>
+        <td>{{ lab.cod_asignatura }}</td>
+        <td>{{ lab.cod_curso }}</td>
+        <td>{{ lab.grupo }}</td>
+        <td><form action="{% url 'validarMatricula' lab.cod_curso %}" method="POST">{% csrf_token %}
+            <input type="submit" value="Matricularme">
+        </form></td>
+    </tr>
+    {% endfor %}
+
+</table>
+<a href="/mislaboratorios">Mis laboratorios</a>

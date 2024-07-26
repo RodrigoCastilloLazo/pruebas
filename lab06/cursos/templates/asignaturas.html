@@ -1,0 +1,19 @@
+<h1> Asignaturas </h1>
+<table>
+    <tr>
+        <th>Codigo Asignatura</th>
+        <th>Nombre Curso</th>
+        <th>estado</th>
+
+    </tr>
+    {% for asignatura in asignaturas %}
+    <tr>
+        <td>{{ asignatura.cod_asignatura }}</td>
+        <td>{{ asignatura.nombre_curso }}</td>
+        <td>{{ asignatura.status }}</td>
+        <td><a  href="{% url 'agregar_grupo' asignatura.cod_asignatura %} "  >agregar grupo</a></td>
+    </tr>
+    {% endfor %}
+    <a href="/verlaboratorios">ver laboratorios</a>
+
+</table>

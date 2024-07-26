@@ -1,0 +1,23 @@
+<h1> Docentes </h1>
+<table>
+    <tr>
+        <th>codigo docnte</th>
+        <th>nombre</th>
+        <th>apellido paterno</th>
+        <th>apellido materno</th>
+        <th>estado</th>
+        <th>editar</th>
+    </tr>
+    {% for docente in docentes %}
+    <tr>
+        <td>{{ docente.cod_docente }}</td>
+        <td>{{ docente.nombre }}</td>
+        <td>{{ docente.apellido_paterno }}</td>
+        <td>{{ docente.apellido_materno }}</td>
+        <td>{{ docente.status }}</td>
+        <td><a href="{% url 'editar_Docentes' docente.cod_docente %}">editar</td>
+    </tr>
+    {% endfor %}
+    <a href="/agregar-docentes">agregar</a>
+
+</table>

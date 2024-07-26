@@ -1,0 +1,8 @@
+
+<form method='POST'> {% csrf_token %}
+    {{ form.as_p }}
+    <button>update</button>
+</form>
+<form action="{% url 'status_Docentes' docente.cod_docente %}" method='POST'>{% csrf_token %} 
+    <button>modificar estado</button>
+</form>

@@ -1,0 +1,21 @@
+<h1> Laboratorios </h1>
+<table>
+    <tr>
+        <th>codigo de Laboratorio</th>
+        <th>asignatura</th>
+        <th>grupo</th>
+        <th>codigo salon</th>
+        <th>estado</th>
+
+    </tr>
+    {% for labs  in laboratorios %}
+    <tr>
+        <td>{{ labs.cod_curso }}</td>
+        <td>{{ labs.cod_asignatura }}</td>
+        <td>{{ labs.grupo }}</td>
+        <td>{{ labs.cod_salon }}</td>
+        <td>{{ labs.status }}</td>
+    </tr>
+    {% endfor %}
+
+</table>

@@ -1,0 +1,24 @@
+<h1> mis labs </h1>
+<table>
+    <tr>
+        <th>Usuario</th>
+        <th>Codigo de curso</th>
+        <th>stado</th>
+        <th>desmatricularme</th>
+        <th>estado</th>
+        <th>editar</th>
+    </tr>
+    {% for lab in mislabs %}
+    <tr>
+        <td>{{ lab.cui }}</td>
+        <td>{{ lab.cod_curso.cod_asignatura }}</td>
+        <td>{{ lab.cod_curso.grupo }}</td>
+        <td>{{ lab.status }}</td>
+        <td><form  action="{% url 'desmatricularme' lab.cod_curso %}" method="POST">{% csrf_token %} 
+            <input type="submit" value="Desmatricularme">
+        </form></td>
+    </tr>
+    {% endfor %}
+    <a href="/matricula">Matricularme</a>
+
+</table>

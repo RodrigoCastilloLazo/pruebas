@@ -1,0 +1,20 @@
+<table>
+    <tr>
+        <th>Solicitud</th>
+        <th>Solicito</th>
+        <th>Interesado</th>
+        <th>Ofrezco</th>
+    </tr>
+    {% for res in respuestas %}
+    <tr>
+        <td>{{ res.solicitud.cui_solicitante }}</td>
+        <td>{{ res.solicitud.curso_solicitante }}</td>
+        <td>{{ res.interesado }}</td>
+        <td>{{ res.ofrezco }}</td>
+        <td><form action="{% url 'validarCambio' res.id %}" method="POST">{% csrf_token %}
+            <input type="submit" value="Aceptar"> 
+        </form></td>
+    </tr>
+    {% endfor %}
+
+</table>

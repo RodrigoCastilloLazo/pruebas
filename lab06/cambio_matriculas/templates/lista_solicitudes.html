@@ -1,0 +1,20 @@
+<table>
+    <tr>
+        <th>Alumno</th>
+        <th>Curso</th>
+        <th>Ofresco grupo</th>
+        <th>Busco grupo</th>
+    </tr>
+    {% for sol in solicitudes %}
+    <tr>
+        <td>{{ sol.cui_solicitante }}</td>
+        <td>{{ sol.curso_solicitante.cod_asignatura }}</td>
+        <td>{{ sol.curso_solicitante.grupo }}</td>
+        <td>{{ sol.curso_donante.grupo }}</td>
+        <td><form action="{% url 'respuesta' sol.id %}" method="POST">{% csrf_token %}
+            <input type="submit" value="Interesado">
+        </form></td>
+    </tr>
+    {% endfor %}
+
+</table>
